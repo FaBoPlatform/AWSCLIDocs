@@ -7,6 +7,8 @@
 	* [002 jqのインストール](install/002_jq.md)
 * Configure
 	* [001 Configure](configure/001_setting.md)
+* [VPC](vpc/README.md)
+	* [001 VPCの一覧・設定情報](vpc/001_list.md)
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
@@ -16,6 +18,3 @@
 	* [006 EC2 Security Groupの削除](ec2/006_delete_security.md)
 	* [007 インバウンドをSecurity Groupに設定](ec2/007_inbound_security.md)
 	* [008 インスタンスを生成する](ec2/008_create_instance.md)
-* [VPC](vpc/README.md)
-	* [001 VPCの一覧・設定情報](vpc/001_list.md)
-
