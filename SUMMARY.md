@@ -16,6 +16,6 @@
 	* [006 EC2 Security Groupの削除](ec2/006_delete_security.md)
 	* [007 インバウンドをSecurity Groupに設定](ec2/007_inbound_security.md)
 	* [008 インスタンスを生成する](ec2/008_create_instance.md)
-* VPC
+* [VPC](vpc/README.md)
 	* [001 VPCの一覧・設定情報](vpc/001_list.md)
 
