@@ -26,3 +26,5 @@
 * IoT
 	* [001 Thingの作成](iot/001_create_thing.md)
 	* [002 Thingの削除](iot/002_delete_thing.md)
+	* [003 Thingのポリシーを作成](iot/003_create_policy.md)
+	* [004 Thingのポリシーを削除](iot/004_delete_policy.md)
