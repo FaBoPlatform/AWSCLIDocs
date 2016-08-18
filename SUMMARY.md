@@ -23,3 +23,6 @@
 	* [002 Bucketの削除](s3/002_remove_bucket.md)
 	* [003 ファイルの一覧](s3/003_ls.md)
 	* [004 ファイルのCopy](s3/004_copy.md)
+* IoT
+	* [001 Thingの作成](iot/001_create_thing.md)
+	* [002 Thingの削除](iot/002_delete_thing.md)
