@@ -4,7 +4,7 @@
 	* [001 IAM User](iam/001_iamuser.md)
 * Install
 	* [001 AWS CLIのインストール](install/001_install.md)
-	* [002 jpのインストール](install/002_qp.md)
+	* [002 qpのインストール](install/002_qp.md)
 * Configure
 	* [001 Configure](configure/001_setting.md)
 * EC2
