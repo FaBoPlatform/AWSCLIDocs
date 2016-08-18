@@ -10,3 +10,6 @@
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
+* VPC
+	* [001 VPCの一覧](vpc/001_list.md)
+	* [002 VPCの設定情報](vpc/002_info.md)
