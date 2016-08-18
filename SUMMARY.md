@@ -14,6 +14,7 @@
 	* [004 日付指定でAmazon LinuxのAMIの情報を取得](ec2/004_amazon_date.md)
 	* [005 EC2 Security Groupの作成](ec2/005_create_security.md)
 	* [006 EC2 Security Groupの削除](ec2/006_delete_security.md)
+	* [007 インバウンドをSecurity Groupに設定](ec2/007_inbound_security.md)
 * VPC
 	* [001 VPCの一覧・設定情報](vpc/001_list.md)
 

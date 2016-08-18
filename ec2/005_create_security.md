@@ -36,7 +36,7 @@ $ aws ec2 describe-security-groups --group-names ${SEC_GROUP_NAME} --query 'Secu
 
 
 ```bash
-$ export SEC_GROUP_ID=`aws ec2 describe-security-groups --group-names ${SEC_GROUP_NAME} --query 'SecurityGroups[0].GroupId'`
+$ export SEC_GROUP_ID=`aws ec2 describe-security-groups --group-names ${SEC_GROUP_NAME} --query 'SecurityGroups[0].GroupId' --output text`
 ```
 
 確認
