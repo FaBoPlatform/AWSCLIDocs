@@ -7,4 +7,4 @@
 * Configure
 	* [001 Configure](configure/001_setting.md)
 * EC2
-	* [001 Instance](ec2/001_describe.md)
+	* [001 Instanceの一覧](ec2/001_describe.md)
