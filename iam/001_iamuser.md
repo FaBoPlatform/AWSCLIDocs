@@ -11,3 +11,20 @@ https://AWSアカウントID.signin.aws.amazon.com/console
 
 で発行されたIAM UserでAWS Consoleへアクセスできる。
 
+## IAM Userへのパスワード変更の権限付与
+
+権限を付与したいIAMユーザのユーザーロールに下記のJSONで権限を付与。
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": [
+      "iam:ChangePassword",
+      "iam:GetAccountPasswordPolicy"
+    ],
+    "Resource": "*"
+  }
+}
+```
