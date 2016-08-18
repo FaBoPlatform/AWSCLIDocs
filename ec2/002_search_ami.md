@@ -2,5 +2,6 @@
 
 ## AmazonがオーナーのAMIの検索
 
-> aws ec2 describe-images --owners self amazon
-
+```shell
+$ aws ec2 describe-images --owners self amazon
+```

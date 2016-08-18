@@ -2,7 +2,7 @@
 
 ## Amazon LinuxのImage情報の取得
 
-```bash
+```shell
 aws ec2 describe-images \
 --owners self amazon \
 --filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \
