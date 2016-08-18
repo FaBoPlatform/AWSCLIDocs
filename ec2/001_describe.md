@@ -2,6 +2,6 @@
 
 ## 現在起動中のインスタンス一覧を取得する
 
-```shell
+```bash
 $ aws ec2 describe-instances
 ```
