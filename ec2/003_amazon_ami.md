@@ -1,0 +1,25 @@
+# Amazon LinuxのImageIDの取得
+
+## Amazon Linuxの取得
+
+> aws ec2 describe-images \
+> --owners self amazon \
+> --filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \
+
+## 最新のAmazon LinuxのImage IDを取得(日付順)
+
+> aws ec2 describe-images \
+> --owners self amazon \
+> --filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \
+> --query "reverse(sort_by(Images,&CreationDate))"
+
+## 最新のAmazon Linuxを環境変数に定義
+
+> export AMI_ID=`aws ec2 describe-images \
+> --owners self amazon \
+> --filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \
+> --query "reverse(sort_by(Images,&CreationDate))[0].ImageId"'
+
+確認
+
+> echo ${AMI_ID}
