@@ -18,7 +18,8 @@
 	* [006 EC2 Security Groupの削除](ec2/006_delete_security.md)
 	* [007 インバウンドをSecurity Groupに設定](ec2/007_inbound_security.md)
 	* [008 インスタンスを生成する](ec2/008_create_instance.md)
-* S3
+* [S3](s3/README.md)
 	* [001 Bucketの作成](s3/001_make_bucket.md)
 	* [002 Bucketの削除](s3/002_remove_bucket.md)
-	* [003 ファイルのCopy](s3/003_copy.md)
+	* [003 ファイルの一覧](s3/003_ls.md)
+	* [004 ファイルのCopy](s3/004_copy.md)
