@@ -1,30 +1,11 @@
-# AWSCLIのInstall
+# VPC Describe
 
-## Root UserとIAM User
+## 現在存在するVPCの検索
 
-Root Userはアカウントを発行したユーザ。すべてのAWS Componetへのアクセスできる強力な権限を持っている。
-IAMは、Identity and Access Managementの略で、ユーザ単位で、各コンポーネントへのアクセス許可を記載したポリシーを付与することで、権限管理ができる仕組み。
+> aws ec2 describe-vpcs
 
-## IAM Userのログイン
+## 現在存在するサブネットの検索
 
-https://AWSアカウントID.signin.aws.amazon.com/console
+> aws ec2 describe-subnets
 
-で発行されたIAM UserでAWS Consoleへアクセスできる。
-
-## IAM Userへのパスワード変更の権限付与
-
-権限を付与したいIAMユーザのユーザーロールに下記のJSONで権限を付与。
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-      "iam:ChangePassword",
-      "iam:GetAccountPasswordPolicy"
-    ],
-    "Resource": "*"
-  }
-}
-```
+どのVPCの下にあるかは、VPCの情報を取得した際と VpcId を比較して判断すること。
