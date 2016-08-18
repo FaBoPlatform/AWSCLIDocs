@@ -8,4 +8,5 @@
 * Configure
 	* [001 Configure](configure/001_setting.md)
 * EC2
-	* [001 Instanceの一覧](ec2/001_describe.md)
+	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
+	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
