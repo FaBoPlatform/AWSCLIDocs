@@ -1,7 +1,7 @@
 # Summary
 * [はじめに](README.md)
 * AWS IAM
-	* [001 ](iam/001_iamuser.md)
+	* [001 IAM User](iam/001_iamuser.md)
 * Install
 	* [001 Install](install/001_install.md)
 * Configure
