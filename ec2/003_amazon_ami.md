@@ -13,7 +13,7 @@
 > --filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \<br>
 > --query "reverse(sort_by(Images,&CreationDate))"<br>
 
-## 最新のAmazon Linuxを環境変数に定義
+## 最新のAmazon LinuxのImage IDを環境変数に定義
 
 > export AMI_ID=`aws ec2 describe-images \<br>
 > --owners self amazon \<br>
