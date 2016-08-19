@@ -50,14 +50,14 @@ JSONでSecurityGroupのInbound/Outboundを作る。可能なフローとして�
 
 ```bash
 : # SSH Gateway向け設定の追加
-aws ec2 authorize-security-group-ingress --cli-input-json '{"DryRun":false,"GroupId":"<GroupId>","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"PrefixListIds":[]}]}'
+$ aws ec2 authorize-security-group-ingress --cli-input-json '{"DryRun":false,"GroupId":"<GroupId>","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"PrefixListIds":[]}]}'
 ```
 
 設定を削除する場合、以下のようにコマンドを実行する。
 
 ```bash
 : # SSH Gateway向け設定の削除
-aws ec2 revoke-security-group-ingress --cli-input-json '{"DryRun":false,"GroupId":"<GroupId>","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"PrefixListIds":[]}]}'
+$ aws ec2 revoke-security-group-ingress --cli-input-json '{"DryRun":false,"GroupId":"<GroupId>","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"PrefixListIds":[]}]}'
 ```
 
 ### Subnet
@@ -107,7 +107,7 @@ $ aws ec2 create-internet-gateway --cli-input-json '{"DryRun":false}'
 ```bash
 $ export IG_ID="ゲートウェイID"
 $ export IG_TAG = "fabo gateway"
-aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${IG_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${IG_TAG}\"}]}"
+$ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${IG_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${IG_TAG}\"}]}"
 ```
 
 Internet GatewayをVPCにアタッチするので、メモしておいたInternetGatewayIdと控えておいたVPCのIDを用いて以下のコマンドを実行する。
@@ -121,7 +121,7 @@ $ aws ec2 attach-internet-gateway --cli-input-json "{\"DryRun\":false,\"Internet
 VPC作成時に自動作成されたメインRoute Tableを参照する。以下のコマンドの結果JSONのRouteTableIdをメモする。
 
 ```bash
-aws ec2 describe-route-tables --filter 'Name=association.main,Values=true' --filter "Name=vpc-id,Values=${VPC_ID}"
+$ aws ec2 describe-route-tables --filter 'Name=association.main,Values=true' --filter "Name=vpc-id,Values=${VPC_ID}"
 ```
 
 JSONでRoute Tableにルーティングルールを追加する。InternetGatewayIdが必要なので控えておく。
