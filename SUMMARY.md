@@ -28,3 +28,5 @@
 	* [002 Thingの削除](iot/002_delete_thing.md)
 	* [003 Thingのポリシーを作成](iot/003_create_policy.md)
 	* [004 Thingのポリシーを削除](iot/004_delete_policy.md)
+* Guide
+	* [001 VPCにEC2インスタンスを作成する](guide/001_create_ec2_instance_in_vpc.md)
