@@ -10,13 +10,16 @@ JSONでVPCを作る。CIDR Blockには、RFC1918で規定されているグロ�
 ちなみに、VPC上限は5なので、それ以上作ろうとするとエラーが返る。
 
 ```
-aws ec2 create-vpc --cli-input-json '{"DryRun":false,"CidrBlock":"172.16.0.0/16","InstanceTenancy":"default"}'
+$ export CIDR_BLOCK="172.16.0.0/16"
+$ aws ec2 create-vpc --cli-input-json "{\"DryRun\":false,\"CidrBlock\":\"${CIDR_BLOCK}\",\"InstanceTenancy\":\"default\"}"
 ```
 
 メモしておいたVpcIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
 ```
-aws ec2 create-tags --cli-input-json '{"DryRun":false,"Resources":["<VpcId>"],"Tags":[{"Key":"Name","Value":"some name"}]}'
+$ export VPC_ID="取得したID"
+$ export VPC_NAME="fabo_vpc"
+$ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${VPC_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${VPC_NAME}\"}]}"
 ```
 
 ### メモ
@@ -64,26 +67,30 @@ CIDRブロックはVPCのCIDRブロックのサブネットである必要があ
 
 名称タグは別I/F経由で設定する必要あり；出力結果JSONのSubnetIdをメモする。
 
-```
-aws ec2 create-subnet --cli-input-json '{"DryRun":false,"VpcId":"<VpcId>","CidrBlock":"172.16.1.0/24","AvailabilityZone":"<AvailabilityZone>"}'
+```bash
+$ export SUBNET_CIDR_BLOCK="172.16.1.0/24"
+$ export AVAILABILITY_ZONE="ap-northeast-1c"
+$ aws ec2 create-subnet --cli-input-json "{\"DryRun\":false,\"VpcId\":\"${VPC_ID}\",\"CidrBlock\":\"${SUBNET_CIDR_BLOCK}\",\"AvailabilityZone\":\"${AVAILABILITY_ZONE}\"}"
 ```
 
 AvailabilityZoneは以下のコマンドで候補を確認でき、結果JSONのZoneNameフィールドの値を用いればよい。
 
 ```
-aws ec2 describe-availability-zones
+$ aws ec2 describe-availability-zones
 ```
 
 メモしておいたSubnetIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
 ```
-aws ec2 create-tags --cli-input-json '{"DryRun":false,"Resources":["<SubnetId>"],"Tags":[{"Key":"Name","Value":"some name"}]}'
+$ export SUBNET_ID="subnet-3135e947"
+$ export SUBNET_TAG="fabo subnet"
+$ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${SUBNET_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${SUBNET_TAG}\"}]}"
 ```
 
 最後に、Subnet以下のEC2インスタンスに公開IPアドレスが割り当てられるように、Subnetの該当設定の変更を行う。
 
 ```
-aws ec2 modify-subnet-attribute --client-input '{"SubnetId":"<SubnetId>","MapPublicIpOnLaunch":{"Value":true}}'
+$ aws ec2 modify-subnet-attribute --cli-input-json "{\"SubnetId\":\"${SUBNET_ID}\",\"MapPublicIpOnLaunch\":{\"Value\":true}}"
 ```
 
 ### Internet Gateway
@@ -98,20 +105,22 @@ aws ec2 create-internet-gateway --cli-input-json '{"DryRun":false}'
 メモしておいたInternetGatewayIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
 ```
-aws ec2 create-tags --cli-input-json '{"DryRun":false,"Resources":["<InternetGatewayId>"],"Tags":[{"Key":"Name","Value":"some name"}]}'
+$ export IG_ID="ゲートウェイID"
+$ export IG_TAG = "fabo gateway"
+aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${IG_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${IG_TAG}\"}]}"
 ```
 
 Internet GatewayをVPCにアタッチするので、メモしておいたInternetGatewayIdと控えておいたVPCのIDを用いて以下のコマンドを実行する。
 
 ```
-aws ec2 attach-internet-gateway --cli-input-json '{"DryRun":false,"InternetGatewayId":"<InternetGatewayId>","VpcId":"<VpcId>"}'
+aws ec2 attach-internet-gateway --cli-input-json "{\"DryRun\":false,\"InternetGatewayId\":\"${IG_ID}\",\"VpcId\":\"${VPC_ID}\"}""
 ```
 
 ### Route Table
 VPC作成時に自動作成されたメインRoute Tableを参照する。以下のコマンドの結果JSONのRouteTableIdをメモする。
 
 ```
-aws ec2 describe-route-tables --filter 'Name=association.main,Values=true' --filter "Name=vpc-id,Values=<VpcId>"
+aws ec2 describe-route-tables --filter 'Name=association.main,Values=true' --filter "Name=vpc-id,Values=${VPC_ID}"
 ```
 
 JSONでRoute Tableにルーティングルールを追加する。InternetGatewayIdが必要なので控えておく。
@@ -119,12 +128,14 @@ JSONでRoute Tableにルーティングルールを追加する。InternetGatewa
 
 ```
 : # SSH Gateway向け設定の追加
-aws ec2 create-route --cli-input-json '{"DryRun":false,"RouteTableId":"<RouteTableId>","DestinationCidrBlock":"0.0.0.0/0","GatewayId":"<InternetGatewayId>"}'
+$ export ROUTE_TABLE_ID="ルートテーブルID"
+$ aws ec2 create-route --cli-input-json "{\"DryRun\":false,\"RouteTableId\":\"${ROUTE_TABLE_ID}\",\"DestinationCidrBlock\":\"0.0.0.0/0\",\"GatewayId\":\"${IG_ID}\"}"
 ```
 
 JSONでRoute TableにSubnetを紐づける。SubnetIdが必要なので控えておく。
+
 ```
-aws ec2 associate-route-table --cli-input-json '{"DryRun":false,"SubnetId":"<SubnetId>","RouteTableId":"<RouteTableId>"}'
+$ aws ec2 associate-route-table --cli-input-json "{\"DryRun\":false, \"SubnetId\":\"${SUBNET_UD}\",\"RouteTableId\":\${ROUTE_TABLE_ID}}"
 ```
 
 ### Instance
