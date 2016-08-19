@@ -9,14 +9,14 @@ JSONでVPCを作る。CIDR Blockには、RFC1918で規定されているグロ�
 
 ちなみに、VPC上限は5なので、それ以上作ろうとするとエラーが返る。
 
-```
+```bash
 $ export CIDR_BLOCK="172.16.0.0/16"
 $ aws ec2 create-vpc --cli-input-json "{\"DryRun\":false,\"CidrBlock\":\"${CIDR_BLOCK}\",\"InstanceTenancy\":\"default\"}"
 ```
 
 メモしておいたVpcIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
-```
+```bash
 $ export VPC_ID="取得したID"
 $ export VPC_NAME="fabo_vpc"
 $ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${VPC_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${VPC_NAME}\"}]}"
@@ -31,14 +31,14 @@ $ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${VPC
 JSONでSecurityGroupを作る。VPCのIDが必要なので控えておく。
 名称タグは別I/F経由で設定する必要あり；出力結果JSONのGroupIdをメモする。
 
-```
-aws ec2 create-security-group --cli-input-json '{"DryRun":false,"GroupName":"some security grp","Description":"dscr comes here.","VpcId":"<VpcId>"}'
+```bash
+$ aws ec2 create-security-group --cli-input-json '{"DryRun":false,"GroupName":"some security grp","Description":"dscr comes here.","VpcId":"<VpcId>"}'
 ```
 
 メモしておいたGroupIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
-```
-aws ec2 create-tags --cli-input-json '{"DryRun":false,"Resources":["<GroupId>"],"Tags":[{"Key":"Name","Value":"some name"}]}'
+```bash
+$ aws ec2 create-tags --cli-input-json '{"DryRun":false,"Resources":["<GroupId>"],"Tags":[{"Key":"Name","Value":"some name"}]}'
 ```
 
 #### Inbound/Outbound
@@ -48,14 +48,14 @@ JSONでSecurityGroupのInbound/Outboundを作る。可能なフローとして�
 
 ***FIXME: 2016/08/19: UserIdGroupPairsとPrefixListIdsの用途が不明なので空にしておく。***
 
-```
+```bash
 : # SSH Gateway向け設定の追加
 aws ec2 authorize-security-group-ingress --cli-input-json '{"DryRun":false,"GroupId":"<GroupId>","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"PrefixListIds":[]}]}'
 ```
 
 設定を削除する場合、以下のようにコマンドを実行する。
 
-```
+```bash
 : # SSH Gateway向け設定の削除
 aws ec2 revoke-security-group-ingress --cli-input-json '{"DryRun":false,"GroupId":"<GroupId>","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"PrefixListIds":[]}]}'
 ```
@@ -75,13 +75,13 @@ $ aws ec2 create-subnet --cli-input-json "{\"DryRun\":false,\"VpcId\":\"${VPC_ID
 
 AvailabilityZoneは以下のコマンドで候補を確認でき、結果JSONのZoneNameフィールドの値を用いればよい。
 
-```
+```bash
 $ aws ec2 describe-availability-zones
 ```
 
 メモしておいたSubnetIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
-```
+```bash
 $ export SUBNET_ID="subnet-3135e947"
 $ export SUBNET_TAG="fabo subnet"
 $ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${SUBNET_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${SUBNET_TAG}\"}]}"
@@ -89,7 +89,7 @@ $ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${SUB
 
 最後に、Subnet以下のEC2インスタンスに公開IPアドレスが割り当てられるように、Subnetの該当設定の変更を行う。
 
-```
+```bash
 $ aws ec2 modify-subnet-attribute --cli-input-json "{\"SubnetId\":\"${SUBNET_ID}\",\"MapPublicIpOnLaunch\":{\"Value\":true}}"
 ```
 
@@ -98,13 +98,13 @@ JSONでInternet Gatewayを作る。VPCのIDが必要なので控えておく。
 
 名称タグは別I/F経由で設定する必要あり；出力結果JSONのInternetGatewayIdをメモする。
 
-```
-aws ec2 create-internet-gateway --cli-input-json '{"DryRun":false}'
+```bash
+$ aws ec2 create-internet-gateway --cli-input-json '{"DryRun":false}'
 ```
 
 メモしておいたInternetGatewayIdを対象リソースとして、Nameタグに名称を設定する。リソースごとのタグ上限は10ということなので注意。
 
-```
+```bash
 $ export IG_ID="ゲートウェイID"
 $ export IG_TAG = "fabo gateway"
 aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${IG_ID}\"],\"Tags\":[{\"Key\":\"Name\",\"Value\":\"${IG_TAG}\"}]}"
@@ -112,21 +112,22 @@ aws ec2 create-tags --cli-input-json "{\"DryRun\":false,\"Resources\":[\"${IG_ID
 
 Internet GatewayをVPCにアタッチするので、メモしておいたInternetGatewayIdと控えておいたVPCのIDを用いて以下のコマンドを実行する。
 
-```
-aws ec2 attach-internet-gateway --cli-input-json "{\"DryRun\":false,\"InternetGatewayId\":\"${IG_ID}\",\"VpcId\":\"${VPC_ID}\"}""
+```bash
+$ aws ec2 attach-internet-gateway --cli-input-json "{\"DryRun\":false,\"InternetGatewayId\":\"${IG_ID}\",\"VpcId\":\"${VPC_ID}\"}"
 ```
 
 ### Route Table
+
 VPC作成時に自動作成されたメインRoute Tableを参照する。以下のコマンドの結果JSONのRouteTableIdをメモする。
 
-```
+```bash
 aws ec2 describe-route-tables --filter 'Name=association.main,Values=true' --filter "Name=vpc-id,Values=${VPC_ID}"
 ```
 
 JSONでRoute Tableにルーティングルールを追加する。InternetGatewayIdが必要なので控えておく。
 今回の場合、IGWに対するルーティングルール。
 
-```
+```bash
 : # SSH Gateway向け設定の追加
 $ export ROUTE_TABLE_ID="ルートテーブルID"
 $ aws ec2 create-route --cli-input-json "{\"DryRun\":false,\"RouteTableId\":\"${ROUTE_TABLE_ID}\",\"DestinationCidrBlock\":\"0.0.0.0/0\",\"GatewayId\":\"${IG_ID}\"}"
@@ -134,7 +135,7 @@ $ aws ec2 create-route --cli-input-json "{\"DryRun\":false,\"RouteTableId\":\"${
 
 JSONでRoute TableにSubnetを紐づける。SubnetIdが必要なので控えておく。
 
-```
+```bash
 $ aws ec2 associate-route-table --cli-input-json "{\"DryRun\":false, \"SubnetId\":\"${SUBNET_UD}\",\"RouteTableId\":\${ROUTE_TABLE_ID}}"
 ```
 
