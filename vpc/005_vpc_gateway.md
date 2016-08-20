@@ -12,3 +12,28 @@
 ```bash
 $ aws ec2 attach-internet-gateway --internet-gateway-id ${GATEWAY_ID} --vpc-id ${VPC_ID}
 ```
+
+## 対応付けを確認する
+
+```bash
+$ aws ec2 describe-internet-gateways --internet-gateway-id ${GATEWAY_ID}
+```
+
+Attachmentsの項目ができ、アタッチされたVPCのIDが追加される。
+
+```json
+{
+    "InternetGateways": [
+        {
+            "Tags": [], 
+            "InternetGatewayId": "igw-########", 
+            "Attachments": [
+                {
+                    "State": "available", 
+                    "VpcId": "vpc-########"
+                }
+            ]
+        }
+    ]
+}
+```
