@@ -18,8 +18,10 @@
 	* [008 Subnetにタグをつける](vpc/008_create_subnet_tag.md)
 	* [009 RouteTableの編集](vpc/009_modify_route_table.md)
 	* [010 RouteTableにタグをつける](vpc/010_create_route_table_tag.md)
-	* [015 VPCの削除](vpc/015_delete_vpc.md)
-	* [016 Internet Gatewayの削除](vpc/016_delete_gateway.md)
+	* [011 Route Tableにルーティングルールを追加](vpc/011_add_rule.md)
+	* [012 Route TableにSubnetを関連づけ](vpc/012_associate_subnet.md)
+	* [013 VPCの削除](vpc/013_delete_vpc.md)
+	* [014 Internet Gatewayの削除](vpc/014_delete_gateway.md)
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
