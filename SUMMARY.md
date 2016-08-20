@@ -10,7 +10,9 @@
 * [VPC](vpc/README.md)
 	* [001 VPCの作成](vpc/001_create_vpc.md)
 	* [002 VPCの一覧](vpc/002_describe_vpc.md)
-	* [001 VPCにタグをつける](vpc/003_create_tag.md)
+	* [003 VPCにタグをつける](vpc/003_create_tag.md)
+	* [004 Internet Gatewayの作成](vpc/004_create_gateway.md)
+	* [005 Internet Gatewayにタグをつける](vpc/005_create_gateway_tag.md)
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)

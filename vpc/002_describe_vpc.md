@@ -20,6 +20,8 @@ $ aws ec2 describe-vpcs --vpc-ids "${VPC_ID}"
 
 ## 現在存在するサブネットの検索
 
-> aws ec2 describe-subnets
+```
+aws ec2 describe-subnets
+```
 
 どのVPCの下にあるかは、VPCの情報を取得した際と VpcId を比較して判断すること。
