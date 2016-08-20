@@ -13,6 +13,9 @@
 	* [003 VPCにタグをつける](vpc/003_create_tag.md)
 	* [004 Internet Gatewayの作成](vpc/004_create_gateway.md)
 	* [005 Internet GatewayとVPCを関連付ける](vpc/005_vpc_gateway.md)
+	* [006 Availabirity Zonenの一覧](vpc/006_describe_availability_zone.md)
+	* [007 Subnetの作成](vpc/007_create_subnet.md)
+	* [008 Subnetにタグをつける](vpc/008_create_subnet_tag.md)
 	* [010 VPCの削除](vpc/010_delete_vpc.md)
 	* [011 Internet Gatewayの削除](vpc/011_delete_gateway.md)
 * EC2
