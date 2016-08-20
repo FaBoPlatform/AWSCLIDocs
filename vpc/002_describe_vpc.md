@@ -1,8 +1,16 @@
-# VPC Describe
+# VPCの一覧の表示
 
 ## 現在存在するVPCの検索
 
-> aws ec2 describe-vpcs
+```bash
+$ aws ec2 describe-vpcs
+```
+
+## vpc-idで絞る
+
+```bash
+$ aws ec2 describe-vpcs --vpc-ids "${VPC_ID}"
+```
 
 ## 現在存在するサブネットの検索
 

@@ -8,7 +8,9 @@
 * Configure
 	* [001 Configure](configure/001_setting.md)
 * [VPC](vpc/README.md)
-	* [001 VPCの一覧・設定情報](vpc/001_list.md)
+	* [001 VPCの作成](vpc/001_create_vpc.md)
+	* [002 VPCの一覧](vpc/002_describe_vpc.md)
+	* [001 VPCにタグをつける](vpc/003_create_tag.md)
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
