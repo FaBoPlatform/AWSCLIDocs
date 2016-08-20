@@ -16,8 +16,10 @@
 	* [006 Availabirity Zonenの一覧](vpc/006_describe_availability_zone.md)
 	* [007 Subnetの作成](vpc/007_create_subnet.md)
 	* [008 Subnetにタグをつける](vpc/008_create_subnet_tag.md)
-	* [010 VPCの削除](vpc/010_delete_vpc.md)
-	* [011 Internet Gatewayの削除](vpc/011_delete_gateway.md)
+	* [009 RouteTableの編集](vpc/009_modify_route_table.md)
+	* [010 RouteTableにタグをつける](vpc/010_create_route_table_tag.md)
+	* [015 VPCの削除](vpc/015_delete_vpc.md)
+	* [016 Internet Gatewayの削除](vpc/016_delete_gateway.md)
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
