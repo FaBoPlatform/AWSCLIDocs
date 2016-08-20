@@ -13,6 +13,8 @@
 	* [003 VPCにタグをつける](vpc/003_create_tag.md)
 	* [004 Internet Gatewayの作成](vpc/004_create_gateway.md)
 	* [005 Internet Gatewayにタグをつける](vpc/005_create_gateway_tag.md)
+	* [010 VPCの削除](vpc/010_delete_vpc.md)
+	* [011 Internet Gatewayの削除](vpc/011_delete_gateway.md)
 * EC2
 	* [001 起動中のInstanceの一覧](ec2/001_describe.md)
 	* [002 AmazonがオーナーのAMI検索](ec2/002_search_ami.md)
