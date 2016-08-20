@@ -12,7 +12,7 @@
 	* [002 VPCの一覧](vpc/002_describe_vpc.md)
 	* [003 VPCにタグをつける](vpc/003_create_tag.md)
 	* [004 Internet Gatewayの作成](vpc/004_create_gateway.md)
-	* [005 Internet Gatewayにタグをつける](vpc/005_create_gateway_tag.md)
+	* [005 Internet GatewayとVPCを関連付ける](vpc/005_vpc_gateway.md)
 	* [010 VPCの削除](vpc/010_delete_vpc.md)
 	* [011 Internet Gatewayの削除](vpc/011_delete_gateway.md)
 * EC2
