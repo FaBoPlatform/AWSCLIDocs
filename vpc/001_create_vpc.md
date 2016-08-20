@@ -37,6 +37,6 @@ $ export VPC_ID="vpc-########"
 
 ## 確認
 
-``bash
+```bash
 $ echo ${VPC_ID}
-``
+```
