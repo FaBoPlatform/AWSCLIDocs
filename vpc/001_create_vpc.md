@@ -1,5 +1,7 @@
 # VPCの作成
 
+## 本項で使用する環境変数
+
 |環境変数|値|
 |:--|:--|
 |CIDR_BLOCK|172.16.0.0/16|
@@ -27,12 +29,14 @@ $ aws ec2 create-vpc --cidr-block ${CIDR_BLOCK}
 }
 ```
 
+環境変数に設定
+
 ```bash
-export VPC_ID="vpc-########"
+$ export VPC_ID="vpc-########"
 ```
 
 ## 確認
 
 ``bash
-excho ${VPC_ID}
-```
+$ echo ${VPC_ID}
+``
