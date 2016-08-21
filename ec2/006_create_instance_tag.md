@@ -4,7 +4,7 @@
 
 |環境変数|値|
 |:--|:--|
-|INSTANCE_ID|[004 インスタンスを生成する](/ec2/004_create_instance.md)で環境変数に設定|
+|INSTANCE_ID|[005 インスタンスを生成する](/ec2/005_create_instance.md)で環境変数に設定|
 |INSTANCE_TAG|fabo web|
 
 ## インスタンスを生成する
