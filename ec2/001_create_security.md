@@ -4,7 +4,7 @@
 
 |環境変数|値|
 |:--|:--|
-|VPC_ID|[001 VPCの作成](vpc/001_create_vpc.md)|
+|VPC_ID|[001 VPCの作成](/vpc/001_create_vpc.md)|
 |SEC_GROUP_NAME| fabo |
 |SEC_GROUP_DESC| group of fabo |
 |SEC_GROUP_ID| 本項で設定 |

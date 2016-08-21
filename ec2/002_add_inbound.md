@@ -4,7 +4,7 @@
 
 |環境変数|値|
 |:--|:--|
-|VPC_ID|[003 Security Groupの作成](ec2/003_create_security.md)|
+|VPC_ID|[003 Security Groupの作成](/ec2/003_create_security.md)|
 
 ## TCP 80ポートを全許可
 
