@@ -4,8 +4,8 @@
 
 |環境変数|値|
 |:--|:--|
-|VPC_ID|[001 VPCの作成](001_create_vpc.md)で環境変数に設定|
-|AVAILABILITY_ZONE|[006 Availabirity Zonenの一覧](vpc/006_describe_availability_zone.md)で環境変数に設定|
+|VPC_ID|[001 VPCの作成](/vpc/001_create_vpc.md)で環境変数に設定|
+|AVAILABILITY_ZONE|[006 Availabirity Zonenの一覧](/vpc/006_describe_availability_zone.md)で環境変数に設定|
 |SUBNET_CIDR_BLOCK|172.16.1.0/24|
 |SUBNET_ID|本項で設定|
 

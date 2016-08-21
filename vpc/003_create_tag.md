@@ -4,7 +4,7 @@
 
 |環境変数|値|
 |:--|:--|
-|VPC_ID|[001 VPCの作成](001_create_vpc.md)で環境変数に設定|
+|VPC_ID|[001 VPCの作成](/vpc/001_create_vpc.md)で環境変数に設定|
 |VPC_TAG| vpc of fabo|
 
 ## VPCにタグをつける

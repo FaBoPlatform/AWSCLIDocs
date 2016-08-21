@@ -27,5 +27,98 @@ $ aws ec2 run-instances \
 --associate-public-ip-address 
 ```
 
+結果
 
+```json
+{
+    "OwnerId": "###########", 
+    "ReservationId": "r-########", 
+    "Groups": [], 
+    "Instances": [
+        {
+            "Monitoring": {
+                "State": "disabled"
+            }, 
+            "PublicDnsName": "", 
+            "RootDeviceType": "ebs", 
+            "State": {
+                "Code": 0, 
+                "Name": "pending"
+            }, 
+            "EbsOptimized": false, 
+            "LaunchTime": "2016-08-21T01:11:05.000Z", 
+            "PrivateIpAddress": "172.16.1.151", 
+            "ProductCodes": [], 
+            "VpcId": "vpc-########", 
+            "StateTransitionReason": "", 
+            "InstanceId": "i-########", 
+            "ImageId": "ami-374db956", 
+            "PrivateDnsName": "ip-172-16-1-151.ap-northeast-1.compute.internal", 
+            "KeyName": "fabo", 
+            "SecurityGroups": [
+                {
+                    "GroupName": "fabo", 
+                    "GroupId": "sg-########"
+                }
+            ], 
+            "ClientToken": "", 
+            "SubnetId": "subnet-########", 
+            "InstanceType": "t2.micro", 
+            "NetworkInterfaces": [
+                {
+                    "Status": "in-use", 
+                    "MacAddress": "0a:b9:7a:cb:c8:0d", 
+                    "SourceDestCheck": true, 
+                    "VpcId": "vpc-48362d2d", 
+                    "Description": "", 
+                    "NetworkInterfaceId": "eni-########", 
+                    "PrivateIpAddresses": [
+                        {
+                            "Primary": true, 
+                            "PrivateIpAddress": "172.16.1.151"
+                        }
+                    ], 
+                    "Attachment": {
+                        "Status": "attaching", 
+                        "DeviceIndex": 0, 
+                        "DeleteOnTermination": true, 
+                        "AttachmentId": "eni-attach-########", 
+                        "AttachTime": "2016-08-21T01:11:05.000Z"
+                    }, 
+                    "Groups": [
+                        {
+                            "GroupName": "fabo", 
+                            "GroupId": "sg-########"
+                        }
+                    ], 
+                    "SubnetId": "subnet-#########", 
+                    "OwnerId": "###############", 
+                    "PrivateIpAddress": "172.16.1.151"
+                }
+            ], 
+            "SourceDestCheck": true, 
+            "Placement": {
+                "Tenancy": "default", 
+                "GroupName": "", 
+                "AvailabilityZone": "ap-northeast-1c"
+            }, 
+            "Hypervisor": "xen", 
+            "BlockDeviceMappings": [], 
+            "Architecture": "x86_64", 
+            "StateReason": {
+                "Message": "pending", 
+                "Code": "pending"
+            }, 
+            "RootDeviceName": "/dev/xvda", 
+            "VirtualizationType": "hvm", 
+            "AmiLaunchIndex": 0
+        }
+    ]
+}
+```
 
+## Instance Idを環境変数に設定
+
+```bash
+$ export INSTANCE_ID="i-########"
+```

@@ -4,8 +4,8 @@
 
 |環境変数|値|意味|
 |:--|:--|:--|
-|ROUTE_TABLE_ID|[009 RouteTableの編集](vpc/009_modify_route_table.md)で環境変数に設定||
-|SUBNET_ID|[007 Subnetの作成](vpc/007_create_subnet.md)で環境変数に設定|
+|ROUTE_TABLE_ID|[009 RouteTableの編集](/vpc/009_modify_route_table.md)で環境変数に設定||
+|SUBNET_ID|[007 Subnetの作成](/vpc/007_create_subnet.md)で環境変数に設定|
 
 ## Route TableにSubnetを関連づける
 

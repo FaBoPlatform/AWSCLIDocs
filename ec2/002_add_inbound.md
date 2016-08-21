@@ -6,13 +6,18 @@
 |:--|:--|
 |VPC_ID|[003 Security Groupの作成](/ec2/003_create_security.md)|
 
-## TCP 80ポートを全許可
+## TCP 22ポートを全許可(AMIリクエストポート, 必須)
+
+```bash
+$ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol 'tcp' --port 22 --cidr 0.0.0.0/0
+```
+
+## TCP 80ポートを全許可(HTTP, 任意)
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol 'tcp' --port 80 --cidr 0.0.0.0/0
 ```
-
-## TCP 23ポートを全許可
+## TCP 23ポートを全許可(SSH, 任意)
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol 'tcp' --port 23 --cidr 0.0.0.0/0
@@ -83,6 +88,18 @@ $ aws ec2 describe-security-groups --group-id ${SEC_GROUP_ID}
                     "IpProtocol": "tcp", 
                     "UserIdGroupPairs": []
                 }, 
+                {
+                    "PrefixListIds": [], 
+                    "FromPort": 22, 
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ], 
+                    "ToPort": 22, 
+                    "IpProtocol": "tcp", 
+                    "UserIdGroupPairs": []
+                },
                 {
                     "PrefixListIds": [], 
                     "FromPort": 23, 

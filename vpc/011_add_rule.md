@@ -4,8 +4,8 @@
 
 |環境変数|値|意味|
 |:--|:--|:--|
-|ROUTE_TABLE_ID|[009 RouteTableの編集](vpc/009_modify_route_table.md)で環境変数に設定||
-|GATEWAY_ID|[004 Internet Gatewayの作成](vpc/004_create_gateway.md)で環境変数に設定||
+|ROUTE_TABLE_ID|[009 RouteTableの編集](/vpc/009_modify_route_table.md)で環境変数に設定||
+|GATEWAY_ID|[004 Internet Gatewayの作成](/vpc/004_create_gateway.md)で環境変数に設定||
 |DESTINATION_CIDR_BLOCK|0.0.0.0/0|すべてのトラフィック|
 
 ## Route Tableにルーティングルーツを追加

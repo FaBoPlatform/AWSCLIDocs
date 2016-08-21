@@ -4,7 +4,7 @@
 
 |環境変数|値|
 |:--|:--|
-|GATEWAY_ID|[004 Internet Gatewayの作成](vpc/004_create_gateway.md)で環境変数に設定|
+|GATEWAY_ID|[004 Internet Gatewayの作成](/vpc/004_create_gateway.md)で環境変数に設定|
 
 ## VPCの削除
 

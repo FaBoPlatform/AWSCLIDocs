@@ -4,7 +4,7 @@
 
 |環境変数|値|
 |:--|:--|
-|SUBNET_ID|[007 Subnetの作成](vpc/007_create_subnet.md)|
+|SUBNET_ID|[007 Subnetの作成](/vpc/007_create_subnet.md)|
 |SUBNET_TAG|fabo subnet|
 
 ## SubnetにTagをつける
