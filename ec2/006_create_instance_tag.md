@@ -1,4 +1,4 @@
-# インスタンスを生成する
+# インスタンスにタグをつける
 
 ## 本項で使用する環境変数
 
@@ -7,7 +7,7 @@
 |INSTANCE_ID|[005 インスタンスを生成する](/ec2/005_create_instance.md)で環境変数に設定|
 |INSTANCE_TAG|fabo web|
 
-## インスタンスを生成する
+## インスタンスにタグをつける
 
 ```bash
 $ export INSTANCE_TAG="fabo web"
@@ -147,3 +147,5 @@ Tagsの項目が追加される
     ]
 }
 ```
+
+
