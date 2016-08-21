@@ -144,7 +144,7 @@ find /var/www -type f -exec chmod 0664 {} +
 echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 ```
 
-install.shをユーザデータに実行して起動
+install.shをユーザデータに渡してインスタンスを起動
 
 ```bash
 $ aws ec2 run-instances \
