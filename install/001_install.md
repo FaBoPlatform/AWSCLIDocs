@@ -21,7 +21,7 @@ OS Xでは Python、および Python パッケージ管理ツール *setuptools*
 easy_install pip
 ```
 
-## AWCLIのInstall
+## AWSCLIのInstall
 
 `pip` を使って `awscli` をインストールします。
 
