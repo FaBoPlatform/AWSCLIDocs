@@ -1,5 +1,9 @@
 # Internet Gatewayの作成
 
+## 作るもの
+
+![](/img/vpc/gateway001.png)
+
 ## 本項で使用する環境変数
 
 |環境変数|値|
