@@ -10,6 +10,8 @@
 
 ![](/img/config/config003.png)
 
+![](/img/config/config004.png)
+
 アクセスキーIDとシークレットアクセスキーをメモする。
 
 ## Configure
