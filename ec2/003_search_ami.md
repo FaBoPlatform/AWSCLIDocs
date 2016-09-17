@@ -59,6 +59,8 @@ $ export AMI_ID=`aws ec2 describe-images \
 --output text`
 ```
 
+Windowsは手動で設定する
+
 ## 確認
 
 ```bash
