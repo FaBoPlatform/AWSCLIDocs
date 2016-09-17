@@ -24,7 +24,7 @@
 	* [014 VPCの削除](vpc/014_delete_vpc.md)
 	* [015 Internet Gatewayの削除](vpc/015_delete_gateway.md)
 * EC2
-	* [000 EC2の作成に必要なロール](/ec2/000_permission.md)
+	* [000 EC2の作成に必要なロールを追加](/ec2/000_permission.md)
 	* [001 Security Groupの作成](/ec2/001_create_security.md)
 	* [002 Security GroupにInboundを設定](/ec2/002_add_inbound.md)
 	* [003 AMIの検索](/ec2/003_search_ami.md)
