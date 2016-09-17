@@ -7,13 +7,13 @@ IAMは、Identity and Access Managementの略で、ユーザ単位で、各コ�
 
 ## IAM Userの作成
 
-![](/img/iam/ima001.png)
+![](/img/iam/iam001.png)
 
-![](/img/iam/ima002.png)
+![](/img/iam/iam002.png)
 
-![](/img/iam/ima003.png)
+![](/img/iam/iam003.png)
 
-![](/img/iam/ima004.png)
+![](/img/iam/iam004.png)
 
 
 ## IAM Userのログイン
