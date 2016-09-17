@@ -129,6 +129,7 @@ $ export INSTANCE_ID="i-########"
 
 
 install.sh
+
 ```bash
 #!/bin/bash
 yum update -y
@@ -148,13 +149,13 @@ install.shをユーザデータに渡してインスタンスを起動
 
 ```bash
 $ aws ec2 run-instances \
-> --image-id ${AMI_ID} \
-> --instance-type ${INSTNCE_TYPE} \
-> --key-name ${KEY_NAME} \
-> --region ${MY_REGION} \
-> --security-group-ids ${SEC_GROUP_ID} \
-> --subnet-id ${SUBNET_ID} \
-> --associate-public-ip-address \
-> --user-data=file://install.sh
+ --image-id ${AMI_ID} \
+ --instance-type ${INSTNCE_TYPE} \
+ --key-name ${KEY_NAME} \
+ --region ${MY_REGION} \
+ --security-group-ids ${SEC_GROUP_ID} \
+ --subnet-id ${SUBNET_ID} \
+ --associate-public-ip-address \
+ --user-data=file://install.sh
 ```
 

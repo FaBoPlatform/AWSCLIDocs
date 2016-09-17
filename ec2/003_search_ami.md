@@ -11,7 +11,7 @@ AMIは、Amazon マシンイメージの略で、AMIからインスタンスを�
 ## AMIの検索
 
 ```bash
-$ aws ec2 describe-images --owners self amazon
+$ aws ec2 describe-images
 ```
 
 ## AmazonがオーナーのAMIを検索
