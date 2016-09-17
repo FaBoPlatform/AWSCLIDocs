@@ -11,7 +11,8 @@
 ## Route Tableにルーティングルーツを追加
 
 ```bash
-$ aws ec2 create-route --route-table-id ${ROUTE_TABLE_ID} --destination-cidr-block DESTINATION_CIDR_BLOCK --gateway-id ${GATEWAY_ID}
+$ export DESTINATION_CIDR_BLOCK="0.0.0.0/0"
+$ aws ec2 create-route --route-table-id ${ROUTE_TABLE_ID} --destination-cidr-block ${DESTINATION_CIDR_BLOCK} --gateway-id ${GATEWAY_ID}
 ```
 
 結果
