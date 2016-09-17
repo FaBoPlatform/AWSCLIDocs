@@ -147,6 +147,7 @@ echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 
 install.shをユーザデータに渡してインスタンスを起動
 
+OS X
 ```bash
 $ aws ec2 run-instances \
  --image-id ${AMI_ID} \
@@ -157,5 +158,21 @@ $ aws ec2 run-instances \
  --subnet-id ${SUBNET_ID} \
  --associate-public-ip-address \
  --user-data=file://install.sh
+```
+
+Windows
+
+`--user-data=file:c:¥home¥install.sh` はinstall.shのフォルダに合わせる
+
+```bash
+$ aws ec2 run-instances \
+ --image-id ${AMI_ID} \
+ --instance-type ${INSTNCE_TYPE} \
+ --key-name ${KEY_NAME} \
+ --region ${MY_REGION} \
+ --security-group-ids ${SEC_GROUP_ID} \
+ --subnet-id ${SUBNET_ID} \
+ --associate-public-ip-address \
+ --user-data=file:c:¥home¥install.sh
 ```
 
