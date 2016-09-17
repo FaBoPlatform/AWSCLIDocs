@@ -15,7 +15,7 @@
 ```bash
 $ export SEC_GROUP_NAME="fabo"
 $ export SEC_GROUP_DESC="group of fabo."
-$ aws ec2 create-security-group --group-name ${SEC_GROUP_NAME} --description "${SEC_GROUP_DESC}" --vpc-ip=${VPC_IP}
+$ aws ec2 create-security-group --group-name ${SEC_GROUP_NAME} --description "${SEC_GROUP_DESC}" --vpc-id=${VPC_ID}
 ```
 
 返り値
