@@ -42,3 +42,12 @@ JSONにTagsの項目が出現する。
     ]
 }
 ```
+
+## 確認
+
+![](/img/vpc/tag001.png)
+
+![](/img/vpc/tag002.png)
+
+![](/img/vpc/tag003.png)
+
