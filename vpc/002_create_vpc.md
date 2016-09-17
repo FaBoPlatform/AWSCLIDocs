@@ -1,8 +1,11 @@
-# VPCの作成
+# 002 VPCの作成
 
 ## 作るもの
 
-![](/img/vpc/vpc001.png)
+![](/img/vpc/vpc002.png)
+
+* VPC
+* VPC作成時にRouteTableも作成される
 
 ## 本項で使用する環境変数
 
@@ -30,14 +33,15 @@ CIDR_BLOCKは、[RFC 1918](http://www.faqs.org/rfcs/rfc1918.html) で定義さ�
 
 ## VPCの作成
 
-Mac
+OS X
 ```bash
 $ export CIDR_BLOCK="172.16.0.0/16"
 $ aws ec2 create-vpc --cidr-block ${CIDR_BLOCK} 
 ```
-Win
+
+Windows
 ```bash
-$ set CIDR_BLOCK="172.16.0.0/16"
+$ set CIDR_BLOCK=172.16.0.0/16
 $ aws ec2 create-vpc --cidr-block %CIDR_BLOCK%
 ```
 
@@ -56,22 +60,46 @@ $ aws ec2 create-vpc --cidr-block %CIDR_BLOCK%
 }
 ```
 
-環境変数に設定
+## 環境変数に設定
 
-MAC
+OS X
 
 ```bash
 $ export VPC_ID="vpc-########"
 ```
 
-Win
+Windows
 
 ```bash
-$ set VPC_ID="vpc-########"
+$ set VPC_ID=vpc-########
 ```
 
 ## 確認
 
+OS X
+
 ```bash
 $ echo ${VPC_ID}
+```
+
+Windows
+
+```bash
+$ echo %VPD_ID%
+```
+
+## Route Tableの確認
+
+VPC生成時にRouteTableも生成される
+
+OS X
+
+```bash
+$ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=${VPC_ID}"
+```
+
+Windows
+
+```bash
+$ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"
 ```

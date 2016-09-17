@@ -4,18 +4,20 @@
 
 |環境変数|値|
 |:--|:--|
-|VPC_ID|[001 VPCの作成](/vpc/001_create_vpc.md)で環境変数に設定|
+|VPC_ID|[002 VPCの作成](/vpc/002_create_vpc.md)で環境変数に設定|
 |VPC_TAG| vpc of fabo|
 
 ## VPCにタグをつける
 
-Mac
+OS X
+
 ```bash
 $ export VPC_TAG="vpc of fabo"
 $ aws ec2 create-tags --resources ${VPC_ID} --tags "Key=Name,Value=${VPC_TAG}"
 ```
 
-Win
+Windows
+
 ```bash
 $ set VPC_TAG=vpc of fabo
 $ aws ec2 create-tags --resources %VPC_ID% --tags "Key=Name,Value=%VPC_TAG%"
@@ -23,8 +25,16 @@ $ aws ec2 create-tags --resources %VPC_ID% --tags "Key=Name,Value=%VPC_TAG%"
 
 ## vpc-idで絞って情報を表示し反映されているか確認する
 
+OS X
+
 ```bash
 $ aws ec2 describe-vpcs --vpc-ids "${VPC_ID}"
+```
+
+Windows
+
+```bash
+$ aws ec2 describe-vpcs --vpc-ids "%{VPC_ID}%"
 ```
 
 JSONにTagsの項目が出現する。

@@ -1,8 +1,8 @@
-# Subnetの作成
+# 005 Availablity Zoneを調べる
 
 ## 調べる事
 
-![](/img/vpc/available001.png)
+![](/img/vpc/vpc005.png)
 
 ## 本項で使用する環境変数
 
