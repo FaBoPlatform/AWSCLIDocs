@@ -1,5 +1,9 @@
 # Subnetの作成
 
+## つくるもの
+
+![](/img/vpc/subnet001.png)
+
 ## 本項で使用する環境変数
 
 |環境変数|値|
@@ -13,7 +17,6 @@
 
 ```bash
 $ export SUBNET_CIDR_BLOCK="172.16.1.0/24"
-$ export AVAILABILITY_ZONE="ap-northeast-1c"
 $ aws ec2 create-subnet --vpc-id ${VPC_ID} --cidr-block ${SUBNET_CIDR_BLOCK} --availability-zone ${AVAILABILITY_ZONE}
 ```
 
