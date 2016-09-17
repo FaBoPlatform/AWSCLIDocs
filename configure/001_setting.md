@@ -4,14 +4,22 @@
 
 ```AWS Access key ID```と```AWS Secret Access Key```は、AWS Consoleから発行する。
 
+![](/img/config/config001.png)
+
+![](/img/config/config002.png)
+
+![](/img/config/config003.png)
+
+アクセスキーIDとシークレットアクセスキーをメモする。
+
 ## Configure
 
 ```
 $ aws configure
-AWS Access Key ID [****************CJCQ]: 
-AWS Secret Access Key [****************nLqr]: 
-Default region name [ap-northeast-1]: 
-Default output format [json]: 
+AWS Access Key ID [****************CJCQ]: アクセスキーIDを入力
+AWS Secret Access Key [****************nLqr]: シークレットアクセスキーを入力
+Default region name [ap-northeast-1]: ap-northeast-1
+Default output format [json]: json
 ```
 ## 設定できるRegion
 
