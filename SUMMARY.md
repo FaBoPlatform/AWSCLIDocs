@@ -33,7 +33,7 @@
 	* [006 インスタンスにタグをつける](/ec2/006_create_instance_tag.md)
 	* [007 インスタンスのIPアドレスを取得](/ec2/007_get_instance_ip.md)
 	* [008 作成したインスタンスにSSHでログイン](/ec2/008_login_ec2.md)
-	* [009 起動中のInstanceの一覧の取得](/ec2/009_describe.md)
+	* [009 Instanceの一覧の取得](/ec2/009_describe.md)
 	* [010 インスタンスを削除する](/ec2/010_delete_instance.md)
 	* [011 Key pairを削除する](/ec2/011_delete_key_pair.md)
 	* [012 Security GroupのInboundの削除](/ec2/012_del_inbound.md)
