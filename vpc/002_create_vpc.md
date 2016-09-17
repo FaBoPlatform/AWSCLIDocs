@@ -30,9 +30,15 @@ CIDR_BLOCKは、[RFC 1918](http://www.faqs.org/rfcs/rfc1918.html) で定義さ�
 
 ## VPCの作成
 
+Mac
 ```bash
 $ export CIDR_BLOCK="172.16.0.0/16"
 $ aws ec2 create-vpc --cidr-block ${CIDR_BLOCK} 
+```
+Win
+```bash
+$ set CIDR_BLOCK="172.16.0.0/16"
+$ aws ec2 create-vpc --cidr-block %CIDR_BLOCK%
 ```
 
 返り値は、JSONでくるが、VpcIdだけの取得ができないので手動で環境変数に設定する。
@@ -52,8 +58,16 @@ $ aws ec2 create-vpc --cidr-block ${CIDR_BLOCK}
 
 環境変数に設定
 
+MAC
+
 ```bash
 $ export VPC_ID="vpc-########"
+```
+
+Win
+
+```bash
+$ set VPC_ID="vpc-########"
 ```
 
 ## 確認
