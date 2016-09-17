@@ -1,4 +1,4 @@
-# VPCの削除
+# Inaternet Gatewayの削除
 
 ## 本項で使用する環境変数
 
