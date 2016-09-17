@@ -10,7 +10,7 @@
 |:--|:--|
 |AVAILABILITY_ZONE|本項で設定|
 
-## Subnetの作成
+## Availablity Zoneを調べる
 
 ```bash
 $ aws ec2 describe-availability-zones
