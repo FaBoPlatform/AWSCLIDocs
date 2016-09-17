@@ -16,5 +16,5 @@ $ aws ec2 describe-instances --instance-id ${INSTANCE_ID} --query Reservations[0
 
 ```bash
 $ export IP=`aws ec2 describe-instances --instance-id ${INSTANCE_ID} --query Reservations[0].Instances[0].PublicIpAddress --output text`
-````
+```
 
