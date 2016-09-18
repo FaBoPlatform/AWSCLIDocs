@@ -12,15 +12,15 @@
 `OS X`
 
 ```bash
-$ export GATEWAY_TAG="gateway of fabo"
+$ export GATEWAY_TAG="gateway of fabo."
 $ aws ec2 create-tags --resources ${GATEWAY_ID} --tags "Key=Name,Value=${GATEWAY_TAG}"
 ```
 
 `Windows`
 
 ```bash
-$ export IG_TAG="gateway of fabo"
-$ aws ec2 create-tags --resources ${GATEWAY_ID} --tags "Key=Name,Value=${IG_TAG}"
+$ set GATEWAY_TAG=gateway of fabo.
+$ aws ec2 create-tags --resources %GATEWAY_ID% --tags "Key=Name,Value=%GATEWAY_TAG%"
 ```
 
 ## 確認

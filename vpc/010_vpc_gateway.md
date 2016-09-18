@@ -11,7 +11,7 @@
 |VPC_ID|[001 VPCの作成](/vpc/001_create_vpc.md)で環境変数に設定|
 |GATEWAY_ID|[008 Internet Gatewayの作成](vpc/008_create_gateway.md)で環境変数に設定|
 
-## Internet Gatewayの作成
+## Internet GatewayとVPCを関連付ける
 
 `OS X`
 

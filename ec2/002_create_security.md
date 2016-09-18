@@ -12,14 +12,16 @@
 
 ## Security Groupの作成
 
-OS X
+`OS X`
+
 ```bash
 $ export SEC_GROUP_NAME="fabo"
 $ export SEC_GROUP_DESC="group of fabo."
 $ aws ec2 create-security-group --group-name ${SEC_GROUP_NAME} --description "${SEC_GROUP_DESC}" --vpc-id ${VPC_ID}
 ```
 
-Windows
+`Windows`
+
 ```bash
 $ set SEC_GROUP_NAME=fabo
 $ set SEC_GROUP_DESC=group of fabo.
@@ -36,12 +38,14 @@ $ aws ec2 create-security-group --group-name %SEC_GROUP_NAME% --description %SEC
 
 ## GroupIDを環境変数に設定
 
-OS X
+`OS X`
+
 ```bash
 $ export SEC_GROUP_ID="########"
 ```
 
-Windos
+`Windows`
+
 ```bash
 $ set SEC_GROUP_ID=########
 ```
@@ -49,12 +53,14 @@ $ set SEC_GROUP_ID=########
 
 ## Security Groupの情報を表示
 
-OS X
+`OS X`
+
 ```bash
 $ aws ec2 describe-security-groups --group-ids ${SEC_GROUP_ID}
 ```
 
-Windows
+`Windows`
+
 ```bash
 $ aws ec2 describe-security-groups --group-ids %SEC_GROUP_ID%
 ```
