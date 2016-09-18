@@ -103,3 +103,8 @@ Windows
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"
 ```
+
+## Reference
+
+* [Amazon VPCの制限](http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html)
+* [DHCPオプションセット](http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html#AmazonDNS)
