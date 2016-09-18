@@ -12,7 +12,7 @@
 	* [002 VPCの作成](vpc/002_create_vpc.md)
 	* [003 VPC関連情報を表示](vpc/003_describe_vpc.md)
 	* [004 VPCにタグをつける](vpc/004_create_tag.md)
-	* [005 Availablity Zoneを調べる](vpc/005_describe_availability_zone.md)
+	* [005 Availability Zoneを調べる](vpc/005_describe_availability_zone.md)
 	* [006 Subnetの作成](vpc/006_create_subnet.md)
 	* [007 Subnetにタグをつける](vpc/007_create_subnet_tag.md)
 	* [008 Internet Gatewayの作成](vpc/008_create_gateway.md)

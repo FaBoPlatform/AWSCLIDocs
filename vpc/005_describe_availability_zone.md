@@ -1,4 +1,4 @@
-# 005 Availablity Zoneを調べる
+# 005 Availability Zoneを調べる
 
 ## 調べる事
 
@@ -10,7 +10,7 @@
 |:--|:--|
 |AVAILABILITY_ZONE|本項で設定|
 
-## Availablity Zoneを調べる
+## Availability Zoneを調べる
 
 ```bash
 $ aws ec2 describe-availability-zones
@@ -45,6 +45,14 @@ $ aws ec2 describe-availability-zones
 
 今回は、`ap-northeast-1a`を環境変数に設定します。
 
+OS X
+
 ```bash
 $ export AVAILABILITY_ZONE="ap-northeast-1a"
+```
+
+Windows
+
+```bash
+$ set AVAILABILITY_ZONE=ap-northeast-1a
 ```
