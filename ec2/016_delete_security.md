@@ -11,11 +11,11 @@
 `OS X`
 
 ```bash
-$ aws ec2 delete-security-groups --group-ids ${SEC_GROUP_ID}
+$ aws ec2 delete-security-group --group-id ${SEC_GROUP_ID}
 ```
 
 `Windows`
 
 ```bash
-$ aws ec2 delete-security-groups --group-ids %SEC_GROUP_ID%
+$ aws ec2 delete-security-group --group-id %SEC_GROUP_ID%
 ```
