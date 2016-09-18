@@ -9,13 +9,13 @@
 
 ## SubnetにTagをつける
 
-OS X
+`OS X`
 
 ```bash
 $ export SUBNET_TAG="fabo subnet"
 $ aws ec2 create-tags --resources ${SUBNET_ID} --tags "Key=Name,Value=${SUBNET_TAG}"
 ```
-Windows
+`Windows`
 
 ```bash
 $ set SUBNET_TAG=fabo subnet
@@ -24,13 +24,13 @@ $ aws ec2 create-tags --resources %SUBNET_ID% --tags "Key=Name,Value=%SUBNET_TAG
 
 ## 確認
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 describe-subnets --subnet-id=${SUBNET_ID}
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 describe-subnets --subnet-id=%SUBNET_ID%

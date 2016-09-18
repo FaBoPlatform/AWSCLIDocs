@@ -1,4 +1,4 @@
-# Route TableをSubnetに関連づける
+# 013 Route TableをSubnetに関連づける
 
 ## 本項で使用する環境変数
 

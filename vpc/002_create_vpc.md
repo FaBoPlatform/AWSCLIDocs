@@ -76,13 +76,13 @@ $ set VPC_ID=vpc-########
 
 ## 確認
 
-OS X
+`OS X`
 
 ```bash
 $ echo ${VPC_ID}
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ echo %VPD_ID%
@@ -92,13 +92,13 @@ $ echo %VPD_ID%
 
 VPC生成時にRouteTableも生成される
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=${VPC_ID}"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"

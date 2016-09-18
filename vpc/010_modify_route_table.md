@@ -1,4 +1,4 @@
-# Route Tableの編集
+# 010 Route Tableの編集
 
 ## 本項で使用する環境変数
 
@@ -11,8 +11,16 @@
 
 VPC作成時に自動的にRoute Tableが作成されている。今回は、そのRoute Tableを編集する。
 
+`OS X`
+
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=${VPC_ID}"
+```
+
+`Windows`
+
+```bash
+$ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"
 ```
 
 結果
@@ -47,7 +55,14 @@ $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=${VPC_ID}"
 
 Rounte Table Idを環境変数に設定.
 
+`OS X`
+
 ```bash
 $ export ROUTE_TABLE_ID="rtb-########"
 ```
 
+`Windows`
+
+```bash
+$ set ROUTE_TABLE_ID=rtb-########
+```

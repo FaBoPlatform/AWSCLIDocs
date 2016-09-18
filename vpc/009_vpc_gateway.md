@@ -13,13 +13,13 @@
 
 ## Internet Gatewayの作成
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 attach-internet-gateway --internet-gateway-id ${GATEWAY_ID} --vpc-id ${VPC_ID}
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 attach-internet-gateway --internet-gateway-id %GATEWAY_ID% --vpc-id %VPC_ID%
@@ -27,13 +27,13 @@ $ aws ec2 attach-internet-gateway --internet-gateway-id %GATEWAY_ID% --vpc-id %V
 
 ## 対応付けを確認する
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 describe-internet-gateways --internet-gateway-id ${GATEWAY_ID}
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 describe-internet-gateways --internet-gateway-id %GATEWAY_ID%

@@ -45,13 +45,13 @@ $ aws ec2 describe-availability-zones
 
 今回は、`ap-northeast-1a`を環境変数に設定します。
 
-OS X
+`OS X`
 
 ```bash
 $ export AVAILABILITY_ZONE="ap-northeast-1a"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ set AVAILABILITY_ZONE=ap-northeast-1a

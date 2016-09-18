@@ -9,14 +9,14 @@
 
 ## VPCにタグをつける
 
-OS X
+`OS X`
 
 ```bash
 $ export VPC_TAG="vpc of fabo"
 $ aws ec2 create-tags --resources ${VPC_ID} --tags "Key=Name,Value=${VPC_TAG}"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ set VPC_TAG=vpc of fabo
@@ -25,13 +25,13 @@ $ aws ec2 create-tags --resources %VPC_ID% --tags "Key=Name,Value=%VPC_TAG%"
 
 ## vpc-idで絞って情報を表示し反映されているか確認する
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 describe-vpcs --vpc-ids "${VPC_ID}"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 describe-vpcs --vpc-ids "%{VPC_ID}%"

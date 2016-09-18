@@ -25,14 +25,14 @@
 
 ## Subnetの作成
 
-OS X
+`OS X`
 
 ```bash
 $ export SUBNET_CIDR_BLOCK="172.16.1.0/24"
 $ aws ec2 create-subnet --vpc-id ${VPC_ID} --cidr-block ${SUBNET_CIDR_BLOCK} --availability-zone ${AVAILABILITY_ZONE}
 ```
 
-Windows
+`Windows`
 
 
 ```bash
@@ -57,13 +57,13 @@ $ aws ec2 create-subnet --vpc-id %VPC_ID% --cidr-block %SUBNET_CIDR_BLOCK% --ava
 
 SubnetIdを環境変数に定義する。
 
-OS X
+`OS X`
 
 ```bash
 $ export SUBNET_ID="subnet-########"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ set SUBNET_ID=subnet-########

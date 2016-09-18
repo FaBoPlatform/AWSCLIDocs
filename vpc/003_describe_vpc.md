@@ -14,26 +14,26 @@ $ aws ec2 describe-vpcs
 
 ## vpc-idで絞る
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 describe-vpcs --vpc-ids ${VPC_ID}
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 describe-vpcs --vpc-ids %VPC_ID%
 ```
 ## Route Tableの確認
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=${VPC_ID}"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"
@@ -43,13 +43,13 @@ $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"
 
 VPCの初期作成時には、生成されないので空の値が返ってくる
 
-OS X
+`OS X`
 
 ```
 $ aws ec2 describe-subnets --filter "Name=vpc-id,Values=${VPC_ID}"
 ```
 
-Windows
+`Windows`
 
 ```
 $ aws ec2 describe-subnets --filter "Name=vpc-id,Values=%VPC_ID%"

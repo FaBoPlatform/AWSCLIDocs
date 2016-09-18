@@ -31,13 +31,13 @@ $ aws ec2 create-internet-gateway
 
 環境変数に設定しておく。
 
-OS X
+`OS X`
 
 ```bash
 $ export GATEWAY_ID="igw-########"
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ set GATEWAY_ID=igw-########
