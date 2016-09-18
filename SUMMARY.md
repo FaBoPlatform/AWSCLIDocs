@@ -20,10 +20,10 @@
 	* [010 Internet GatewayとVPCを関連付ける](vpc/010_vpc_gateway.md)
 	* [011 RouteTableのIDの取得](vpc/011_modify_route_table.md)
 	* [012 RouteTableにタグをつける](vpc/012_create_route_table_tag.md)
-	* [013 Route Tableにルーティングルールを追加](vpc/013_add_rule.md)
+	* [013 Route Tableにルールを追加](vpc/013_add_rule.md)
 	* [014 Route TableにSubnetを関連づけ](vpc/014_associate_subnet.md)
 	* [015 Subnetの削除](vpc/015_delete_subnet.md)
-	* [016 RouteTableにルーティングルールを削除](vpc/016_delete_route.md)
+	* [016 RouteTableからルールを削除](vpc/016_delete_route.md)
 	* [017 Internet Gatewayの削除](vpc/017_delete_gateway.md)
 	* [018 VPCの削除](vpc/018_delete_vpc.md)
 * EC2
