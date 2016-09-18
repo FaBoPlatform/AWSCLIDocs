@@ -29,7 +29,7 @@
 * EC2
 	* [001 EC2の作成に必要なロールを追加](/ec2/001_permission.md)
 	* [002 Security Groupの作成](/ec2/002_create_security.md)
-	* [003 Security Groupにタグをつける](/ec2/003_create_security.md)
+	* [003 Security Groupにタグをつける](/ec2/003_add_security_tag.md)
 	* [004 Security GroupにInboundを設定](/ec2/004_add_inbound.md)
 	* [005 AMIの検索](/ec2/005_search_ami.md)
 	* [006 Key pairの作成](/ec2/006_key_pair.md)
