@@ -8,13 +8,21 @@
 
 |環境変数|値|意味|
 |:--|:--|:--|
-|ROUTE_TABLE_ID|[009 RouteTableの編集](/vpc/009_modify_route_table.md)で環境変数に設定||
-|SUBNET_ID|[007 Subnetの作成](/vpc/007_create_subnet.md)で環境変数に設定|
+|ROUTE_TABLE_ID|[011 RouteTableの編集](vpc/011_modify_route_table.md)で環境変数に設定||
+|SUBNET_ID|[006 Subnetの作成](vpc/006_create_subnet.md)で環境変数に設定|
 
 ## Route TableにSubnetを関連づける
 
+`OS X`
+
 ```bash
-aws ec2 associate-route-table --subnet-id ${SUBNET_ID} --route-table-id ${ROUTE_TABLE_ID}
+$ aws ec2 associate-route-table --subnet-id ${SUBNET_ID} --route-table-id ${ROUTE_TABLE_ID}
+```
+
+`Windows`
+
+```bash
+$ aws ec2 associate-route-table --subnet-id %SUBNET_ID% --route-table-id %ROUTE_TABLE_ID%
 ```
 
 結果

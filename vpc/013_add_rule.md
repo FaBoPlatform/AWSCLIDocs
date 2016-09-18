@@ -8,7 +8,7 @@
 
 |環境変数|値|意味|
 |:--|:--|:--|
-|ROUTE_TABLE_ID|[010 RouteTableの編集](/vpc/010_modify_route_table.md)で環境変数に設定||
+|ROUTE_TABLE_ID|[011 RouteTableの編集](vpc/011_modify_route_table.md)で環境変数に設定||
 |GATEWAY_ID|[008 Internet Gatewayの作成](/vpc/008_create_gateway.md)で環境変数に設定||
 |DESTINATION_CIDR_BLOCK|0.0.0.0/0|すべてのトラフィック|
 
