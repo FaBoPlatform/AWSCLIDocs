@@ -1,4 +1,8 @@
-# 003 Security GroupにInBoundを追加
+# 004 Security GroupにInboundを追加
+
+## つくるもの
+
+![](/img/ec2/ec2_004.png)
 
 ## 本項で使用する環境変数
 
