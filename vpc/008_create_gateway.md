@@ -1,8 +1,8 @@
-# Internet Gatewayの作成
+# 008 Internet Gatewayの作成
 
 ## 作るもの
 
-![](/img/vpc/gateway001.png)
+![](/img/vpc/vpc008.png)
 
 ## 本項で使用する環境変数
 
@@ -22,7 +22,7 @@ $ aws ec2 create-internet-gateway
 {
     "InternetGateway": {
         "Tags": [], 
-        "InternetGatewayId": "igw-406f1a25", 
+        "InternetGatewayId": "igw-########", 
         "Attachments": []
     }
 }
@@ -30,6 +30,14 @@ $ aws ec2 create-internet-gateway
 
 環境変数に設定しておく。
 
+OS X
+
 ```bash
 $ export GATEWAY_ID="igw-########"
+```
+
+Windows
+
+```bash
+$ set GATEWAY_ID=igw-########
 ```
