@@ -1,24 +1,42 @@
-# インスタンスにタグをつける
+# 008 インスタンスにタグをつける
 
 ## 本項で使用する環境変数
 
 |環境変数|値|
 |:--|:--|
-|INSTANCE_ID|[005 インスタンスを生成する](/ec2/005_create_instance.md)で環境変数に設定|
+|INSTANCE_ID|[007 インスタンスを生成する](/ec2/007_create_instance.md)で環境変数に設定|
 |INSTANCE_TAG|fabo web|
 
 ## インスタンスにタグをつける
+
+`OS X`
 
 ```bash
 $ export INSTANCE_TAG="fabo web"
 $ aws ec2 create-tags --resources ${INSTANCE_ID} --tags "Key=Name,Value=${INSTANCE_TAG}"
 ```
 
-確認
+`Windows`
+
+```bash
+$ set INSTANCE_TAG=fabo web
+$ aws ec2 create-tags --resources %INSTANCE_ID% --tags "Key=Name,Value=%INSTANCE_TAG%"
+```
+
+## 確認
+
+`OS X`
 
 ```bash
 $ aws ec2 describe-instances --instance-id ${INSTANCE_ID}
 ```
+
+`Windows`
+
+```bash
+$ aws ec2 describe-instances --instance-id %INSTANCE_ID%
+```
+
 
 Tagsの項目が追加される
 

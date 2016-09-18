@@ -1,4 +1,4 @@
-# AMIの検索
+# 005 AMIの検索
 
 AMIは、Amazon マシンイメージの略で、AMIからインスタンスを起動することができる。
 
@@ -34,7 +34,7 @@ $ aws ec2 describe-images \
 `2012-10-08T18:19:50.000Z`に作成されたAmazon Linuxを取得
 
 ```bash
-aws ec2 describe-images \
+$ aws ec2 describe-images \
 --owners self amazon \
 --filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \
 --query 'Images[?CreationDate==`2012-10-08T18:19:50.000Z`]'
@@ -51,6 +51,8 @@ $ aws ec2 describe-images \
 
 ## 最新のAmazon LinuxのImage IDを環境変数に定義
 
+`OS X`
+
 ```bash
 $ export AMI_ID=`aws ec2 describe-images \
 --owners self amazon \
@@ -59,12 +61,38 @@ $ export AMI_ID=`aws ec2 describe-images \
 --output text`
 ```
 
-Windowsは手動で設定する
+`Windows`
+
+```bash
+$ aws ec2 describe-images \
+--owners self amazon \
+--filters "Name=root-device-type,Values=ebs" "Name=name,Values=amzn-ami-hvm-*" "Name=virtualization-type,Values=hvm" \
+--query "reverse(sort_by(Images,&CreationDate))[0].ImageId" \
+```
+
+結果
+
+```bash
+"ami-37cc1b56"
+```
+
+環境変数に設定
+
+```bash
+$ set AMI_ID=ami-37cc1b56
+```
 
 ## 確認
+
+`OS X`
 
 ```bash
 echo ${AMI_ID}
 ```
 
+`Windows`
+
+```bash
+echo %AMI_ID%
+```
 

@@ -1,13 +1,17 @@
-# インスタンスを生成する
+# 007 インスタンスを生成する
+
+## つくるもの
+
+![](/img/ec2/ec2_007.png)
 
 ## 本項で使用する環境変数
 
 |環境変数|値|
 |:--|:--|
-|AMI_ID|[003 AMIの検索](/ec2/003_search_ami.md)で環境変数に設定|
-|SEC_GROUP_ID|[001 Security Groupの作成](/ec2/001_create_security.md)で環境変数に設定|
-|SUBNET_UD|	[007 Subnetの作成](/vpc/007_create_subnet.md)で環境変数に設定|
-|KEY_NAME| [004 Key pairの作成](/ec2/004_key_pair.md)で環境変数に設定|
+|AMI_ID|[005 AMIの検索](/ec2/005_search_ami.md)で環境変数に設定|
+|SEC_GROUP_ID|[002 Security Groupの作成](/ec2/002_create_security.md)で環境変数に設定|
+|SUBNET_UD|	[VPC-006 Subnetの作成](/vpc/006_create_subnet.md)で環境変数に設定|
+|KEY_NAME| [006 Key pairの作成](/ec2/006_key_pair.md)で環境変数に設定|
 |INSTANCE_TYPE|t2.micro|
 |MY_REGION|ap-noetheast-1|
 |INSTANCE_ID|本項で設定|
@@ -119,60 +123,14 @@ $ aws ec2 run-instances \
 
 ## Instance Idを環境変数に設定
 
+`OS X`
+
 ```bash
 $ export INSTANCE_ID="i-########"
 ```
 
-## User Dataを指定しての実行
-
-インスタンスを起動時に、初回に実行するユーザデータを引き渡し、実行することも可能である。
-
-
-install.sh
+`Windows`
 
 ```bash
-#!/bin/bash
-yum update -y
-yum install -y httpd24 php56 mysql55-server php56-mysqlnd
-service httpd start
-chkconfig httpd on
-groupadd www
-usermod -a -G www ec2-user
-chown -R root:www /var/www
-chmod 2775 /var/www
-find /var/www -type d -exec chmod 2775 {} +
-find /var/www -type f -exec chmod 0664 {} +
-echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+$ set INSTANCE_ID=i-########
 ```
-
-install.shをユーザデータに渡してインスタンスを起動
-
-OS X
-```bash
-$ aws ec2 run-instances \
- --image-id ${AMI_ID} \
- --instance-type ${INSTNCE_TYPE} \
- --key-name ${KEY_NAME} \
- --region ${MY_REGION} \
- --security-group-ids ${SEC_GROUP_ID} \
- --subnet-id ${SUBNET_ID} \
- --associate-public-ip-address \
- --user-data=file://install.sh
-```
-
-Windows
-
-`--user-data=file:c:¥home¥install.sh` はinstall.shのフォルダに合わせる
-
-```bash
-$ aws ec2 run-instances \
- --image-id ${AMI_ID} \
- --instance-type ${INSTNCE_TYPE} \
- --key-name ${KEY_NAME} \
- --region ${MY_REGION} \
- --security-group-ids ${SEC_GROUP_ID} \
- --subnet-id ${SUBNET_ID} \
- --associate-public-ip-address \
- --user-data=file:c:¥home¥install.sh
-```
-

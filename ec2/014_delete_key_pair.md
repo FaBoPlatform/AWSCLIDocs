@@ -1,4 +1,4 @@
-# Key Pairの削除
+# 013 Key Pairの削除
 
 ## 本項で使用する環境変数
 
@@ -8,6 +8,14 @@
 
 ## Key Pairの削除
 
+`OS X`
+
 ```bash
 $ aws ec2 delete-key-pair --key-name ${KEY_NAME}
+```
+
+`Windows`
+
+```bash
+$ aws ec2 delete-key-pair --key-name %KEY_NAME%
 ```

@@ -4,7 +4,8 @@
 
 |環境変数|値|
 |:--|:--|
-|SEC_GOURP_ID|[002 Security Groupの作成](/ec2/002_create_security.md)で環境変数に設定|
+|SEC_GROUP_ID|[002 Security Groupの作成](/ec2/002_create_security.md)で環境変数に設定|
+|SEC_GROUP_TAG|fabo security.|
 
 ## Security Groupの作成
 
