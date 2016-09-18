@@ -1,4 +1,8 @@
-# Security Groupの作成
+# 002 Security Groupの作成
+
+## つくるもの
+
+![](/img/ec2/ec2_002.png)
 
 ## 本項で使用する環境変数
 
@@ -6,9 +10,8 @@
 |:--|:--|
 |VPC_ID|[001 VPCの作成](/vpc/001_create_vpc.md)|
 |SEC_GROUP_NAME| fabo |
-|SEC_GROUP_DESC| group of fabo |
+|SEC_GROUP_DESC| group of fabo. |
 |SEC_GROUP_ID| 本項で設定 |
-
 
 ## Security Groupの作成
 

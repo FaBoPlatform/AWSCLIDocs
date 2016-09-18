@@ -1,20 +1,20 @@
-# インバウンドをSecurity Groupに追加
+# 003 Security GroupにInBoundを追加
 
 ## 本項で使用する環境変数
 
 |環境変数|値|
 |:--|:--|
-|VPC_ID|[003 Security Groupの作成](/ec2/003_create_security.md)|
+|SEC_GROUP_ID|[002 Security Groupの作成](/ec2/002_create_security.md)|
 
 ## TCP 22ポートを全許可(AMIリクエストポート, 必須)
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol 'tcp' --port 22 --cidr 0.0.0.0/0
 ```
 
-Winows
+`Windows`
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol tcp --port 22 --cidr 0.0.0.0/0
@@ -22,13 +22,13 @@ $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol
 
 ## TCP 80ポートを全許可(HTTP, 任意)
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol 'tcp' --port 80 --cidr 0.0.0.0/0
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id %SEC_GROUP_ID% --protocol tcp --port 80 --cidr 0.0.0.0/0
@@ -36,13 +36,13 @@ $ aws ec2 authorize-security-group-ingress --group-id %SEC_GROUP_ID% --protocol 
 
 ## TCP 23ポートを全許可(SSH, 任意)
 
-OS X
+`OS X`
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id ${SEC_GROUP_ID} --protocol 'tcp' --port 23 --cidr 0.0.0.0/0
 ```
 
-Windows
+`Windows`
 
 ```bash
 $ aws ec2 authorize-security-group-ingress --group-id %SEC_GROUP_ID% --protocol tcp --port 23 --cidr 0.0.0.0/0
@@ -51,12 +51,14 @@ $ aws ec2 authorize-security-group-ingress --group-id %SEC_GROUP_ID% --protocol 
 
 ## Security Groupの情報を取得
 
-OS X
+`OS X`
+
 ```bash
 $ aws ec2 describe-security-groups --group-id ${SEC_GROUP_ID}
 ```
 
-Windows
+`Windows`
+
 ```bash
 $ aws ec2 describe-security-groups --group-id %SEC_GROUP_ID%
 ```
@@ -88,7 +90,7 @@ $ aws ec2 describe-security-groups --group-id %SEC_GROUP_ID%
 }
 ```
 
-追加後。`IpPermissions`のタグに80番と23番が追加。
+追加後。`IpPermissions`のタグに80番と23番と22番が追加。
 
 ```json
 {
