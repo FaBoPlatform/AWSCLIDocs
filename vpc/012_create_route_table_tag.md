@@ -23,7 +23,7 @@ $ set ROUTE_TABLE_TAG=fabo route table
 $ aws ec2 create-tags --resources %ROUTE_TABLE_ID% --tags "Key=Name,Value=%ROUTE_TABLE_TAG%"
 ```
 
-確認
+## 確認
 
 `OS X`
 
@@ -71,4 +71,6 @@ $ aws ec2 describe-route-tables --filter "Name=route-table-id,Values=%ROUTE_TABL
 }
 ```
 
+## 確認(WebConsole)
 
+![](/img/vpc/route001.png)
