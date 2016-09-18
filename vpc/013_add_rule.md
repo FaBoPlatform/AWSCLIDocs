@@ -1,8 +1,8 @@
-# 012 Route Tableにルーティングルールを追加
+# 013 Route Tableにルーティングルールを追加
 
 ## つくるもの
 
-![](/img/vpc/vpc012.png)
+![](/img/vpc/vpc013.png)
 
 ## 本項で使用する環境変数
 

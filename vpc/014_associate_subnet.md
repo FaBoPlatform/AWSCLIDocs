@@ -1,8 +1,8 @@
-# 013 Route TableをSubnetに関連づける
+# 014 Route TableをSubnetに関連づける
 
 ## つくるもの
 
-![](/img/vpc/vpc013.png)
+![](/img/vpc/vpc014.png)
 
 ## 本項で使用する環境変数
 

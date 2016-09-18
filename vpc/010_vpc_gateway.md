@@ -1,8 +1,8 @@
-# 009 Internet GatewayとVPCを関連付ける
+# 010 Internet GatewayとVPCを関連付ける
 
 ## つくるもの
 
-![](/img/vpc/vpc009.png)
+![](/img/vpc/vpc010.png)
 
 ## 本項で使用する環境変数
 
