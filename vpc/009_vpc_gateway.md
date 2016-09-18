@@ -1,4 +1,4 @@
-# Internet Gatewayの作成
+# 009 Internet GatewayとVPCを関連付ける
 
 ## 本項で使用する環境変数
 
@@ -9,14 +9,30 @@
 
 ## Internet Gatewayの作成
 
+OS X
+
 ```bash
 $ aws ec2 attach-internet-gateway --internet-gateway-id ${GATEWAY_ID} --vpc-id ${VPC_ID}
 ```
 
+Windows
+
+```bash
+$ aws ec2 attach-internet-gateway --internet-gateway-id %GATEWAY_ID% --vpc-id %VPC_ID%
+```
+
 ## 対応付けを確認する
+
+OS X
 
 ```bash
 $ aws ec2 describe-internet-gateways --internet-gateway-id ${GATEWAY_ID}
+```
+
+Windows
+
+```bash
+$ aws ec2 describe-internet-gateways --internet-gateway-id %GATEWAY_ID%
 ```
 
 Attachmentsの項目ができ、アタッチされたVPCのIDが追加される。
@@ -37,3 +53,4 @@ Attachmentsの項目ができ、アタッチされたVPCのIDが追加される�
     ]
 }
 ```
+
