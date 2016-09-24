@@ -45,7 +45,8 @@
 	* [016 Security Groupの削除](/ec2/016_delete_security.md)
 * ELB
 	* [001 ELBの作成に必要なロールを追加](/elb/001_permission.md)
-	* [002 ELBの作成](/elb/002_.md)
+	* [002 ELBの作成](/elb/002_create_elb.md)
+	* [003 ELBにEC2インスタンスを追加](/elb/003_add_instance.md)
 * [S3](s3/README.md)
 	* [001 Bucketの作成](s3/001_make_bucket.md)
 	* [002 Bucketの削除](s3/002_remove_bucket.md)

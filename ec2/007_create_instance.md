@@ -26,11 +26,13 @@ storage.json
 ```bash
 [
     {
-        "DeviceName": "/dev/sdh",
+        "DeviceName": "/dev/xvda",
         "Ebs":{"VolumeSize":32}
     }
 ]
 ```
+
+/dev/xvdaにするとルートデバイスが拡張される。/dev/sdh等にするとブロックデバイスが別途追加される。
 
 ## インスタンスを生成する
 
