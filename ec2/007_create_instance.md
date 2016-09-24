@@ -16,6 +16,22 @@
 |MY_REGION|ap-noetheast-1|
 |INSTANCE_ID|本項で設定|
 
+
+## ストレージ設定JSON
+
+32GのEBSでインスタンスを作成する場合は、下記のようなJSONを用意。Defaultは8G。
+
+storage.json
+
+```bash
+[
+    {
+        "DeviceName": "/dev/sdh",
+        "Ebs":{"VolumeSize":32}
+    }
+]
+```
+
 ## インスタンスを生成する
 
 ```bash
@@ -28,7 +44,8 @@ $ aws ec2 run-instances \
 --region ${MY_REGION} \
 --security-group-ids ${SEC_GROUP_ID} \
 --subnet-id ${SUBNET_ID} \
---associate-public-ip-address 
+--associate-public-ip-address \
+--block-device-mapping file://storage.json
 ```
 
 結果
