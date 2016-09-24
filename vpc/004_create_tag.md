@@ -68,3 +68,38 @@ JSONにTagsの項目が出現する。
 
 ![](/img/vpc/tag003.png)
 
+## DefaultのSecurity Groupにもタグ付けしておく(おまけ)
+
+`OS X`
+
+DefaultのSecurity GroupのIDを取得
+
+```bash
+$ aws ec2 describe-security-groups --filter "Name=vpc-id,Values=${VPC_ID}"
+```
+
+```bash
+$ export DEFAULT_SEC_GROUP_ID="sg-#########"
+```
+
+```bash
+$ export DEFAULT_SEC_GROUP_TAG="default sec of fabo"
+$ aws ec2 create-tags --resources ${DEFAULT_SEC_GROUP_ID} --tags "Key=Name,Value=${DEFAULT_SEC_GROUP_TAG}"
+```
+
+`Windows`
+
+DefaultのSecurity GroupのIDを取得
+
+```bash
+$ aws ec2 describe-security-groups --filter "Name=vpc-id,Values=%VPC_ID%"
+```
+
+```bash
+$ export DEFAULT_SEC_GROUP_ID=sg-#########
+```
+
+```bash
+$ export DEFAULT_SEC_GROUP_TAG=default sec of fabo
+$ aws ec2 create-tags --resources %DEFAULT_SEC_GROUP_ID% --tags "Key=Name,Value=%DEFAULT_SEC_GROUP_TAG%"
+```

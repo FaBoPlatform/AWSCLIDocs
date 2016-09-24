@@ -43,6 +43,9 @@
 	* [014 Key pairを削除する](/ec2/014_delete_key_pair.md)
 	* [015 Security GroupのInboundの削除](/ec2/015_del_inbound.md)
 	* [016 Security Groupの削除](/ec2/016_delete_security.md)
+* ELB
+	* [001 ELBの作成に必要なロールを追加](/elb/001_permission.md)
+	* [002 ELBの作成](/elb/002_create_elb.md)
 * [S3](s3/README.md)
 	* [001 Bucketの作成](s3/001_make_bucket.md)
 	* [002 Bucketの削除](s3/002_remove_bucket.md)

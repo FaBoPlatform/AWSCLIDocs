@@ -6,6 +6,7 @@
 
 * VPC
 * VPC作成時にRouteTableも作成される
+* VPC作成時にDefaultのSecurityGroupも作成される
 
 ## 本項で使用する環境変数
 
@@ -102,6 +103,20 @@ $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=${VPC_ID}"
 
 ```bash
 $ aws ec2 describe-route-tables --filter "Name=vpc-id,Values=%VPC_ID%"
+```
+
+## DefaultのSecurity Groupの確認
+
+`OS X`
+
+```bash
+$ aws ec2 describe-security-groups --filter "Name=vpc-id,Values=${VPC_ID}"
+````
+
+`Windows`
+
+```bash
+$ aws ec2 describe-security-groups --filter "Name=vpc-id,Values=%VPC_ID%"
 ```
 
 ## Reference

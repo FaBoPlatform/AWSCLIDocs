@@ -48,12 +48,7 @@ $ aws ec2 describe-internet-gateways --internet-gateway-ids %GATEWAY_ID%
                 }
             ], 
             "InternetGatewayId": "igw-c56c12a0", 
-            "Attachments": [
-                {
-                    "State": "available", 
-                    "VpcId": "vpc-########"
-                }
-            ]
+            "Attachments": []
         }
     ]
 }
