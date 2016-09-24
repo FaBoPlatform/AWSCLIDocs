@@ -48,6 +48,12 @@
 	* [002 ELBの作成](/elb/002_create_elb.md)
 	* [003 ELBにEC2インスタンスを追加](/elb/003_add_instance.md)
 	* [004 ELBを削除](/elb/004_delete_elb.md)
+* EBS
+	* [001 EBSの作成に必要なロールを追加](/ebs/001_permission.md)
+	* [002 EBSの作成](/ebs/002_create_ebs.md)
+	* [003 EBSにTAGをつける](/ebs/003_add_tag.md)	
+	* [004 EBSにEC2インスタンスに追加](/ebs/004_attach_instance.md)
+	* [005 EBSをAmazon Linuxでマウント](/ebs/005_mount.md)	
 * [S3](s3/README.md)
 	* [001 Bucketの作成](/s3/001_make_bucket.md)
 	* [002 Bucketの削除](/s3/002_remove_bucket.md)

@@ -24,6 +24,8 @@ setting.json
 
 ## ELBの作成
 
+subnetを1つしか指定しないと、標準ロードバランサーになる。
+
 ```bash
 $ export ELB_NAME="faboble"
 $ aws elb create-load-balancer --load-balancer-name ${ELB_NAME} --listeners file://setting.json --subnets ${SUBNET_ID}
