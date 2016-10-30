@@ -4,7 +4,8 @@
 
 |環境変数|値|
 |:--|:--|
-|SUBNET_UD|[013 Route Tableにルーティングルールを追加](vpc/013_add_rule.md)で環境変数に設定|
+|DESTINATION_CIDR_BLOCK|[013 Route Tableにルーティングルールを追加](/vpc/013_add_rule.md)で環境変数に設定|
+|ROUTE_TABLE_ID|[011 RouteTableのIDの取得](/vpc/011_modify_route_table.md)で環境変数に設定|
 
 ## ルーティングルールの削除
 

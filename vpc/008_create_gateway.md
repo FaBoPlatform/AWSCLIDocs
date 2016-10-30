@@ -42,3 +42,28 @@ $ export GATEWAY_ID="igw-########"
 ```bash
 $ set GATEWAY_ID=igw-########
 ```
+
+# Cloud Formation
+
+AWSアカウントに新しいInternet Gatewayを作成する。Internet Gatewayの作成できる数は5個まで。
+
+[AWS::EC2::InternetGateway](http://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internet-gateway.html)
+
+```json
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "Template by FaBo",
+	"Resources": {
+	"FaBo Internet Gateway": {
+		"Type": "AWS::EC2::InternetGateway",
+		"Properties": {
+			"Tags": [
+				{
+					"Key": "Name",
+					"Value": "gateway of fabo."
+				}
+			]
+ 		}
+    }
+}
+```
