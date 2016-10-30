@@ -58,3 +58,24 @@ Attachmentsの項目ができ、アタッチされたVPCのIDが追加される�
 }
 ```
 
+# Cloud Formation
+
+VPC にゲートウェイをアタッチ。VPNGatewayかInternetGatewayをアタッチできる。
+
+[AWS::EC2::VPCGatewayAttachment](http://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html)
+
+```json
+    "FaBoVpcAttachment": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "FaBoVpc"
+        },
+        "InternetGatewayId": {
+          "Ref": "FaBoInternetGateway"
+        }
+      }
+    }
+```
+
+

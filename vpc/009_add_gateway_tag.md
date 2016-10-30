@@ -70,7 +70,7 @@ AWSアカウントに新しいInternet Gatewayを作成する。Internet Gateway
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "Template by FaBo",
     "Resources": {
-    "FaBo Internet Gateway": {
+    "FaBoInternetGateway": {
         "Type": "AWS::EC2::InternetGateway",
         "Properties": {
             "Tags": [

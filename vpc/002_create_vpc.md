@@ -123,3 +123,27 @@ $ aws ec2 describe-security-groups --filter "Name=vpc-id,Values=%VPC_ID%"
 
 * [Amazon VPCの制限](http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html)
 * [DHCPオプションセット](http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html#AmazonDNS)
+
+
+# Cloud Formation
+
+Vpcを作成する。
+
+[AWS::EC2::VPC](http://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html)
+
+```json
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Template by FaBo",
+    "Resources": {
+	"FaBoVpc": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "172.16.0.0/16",
+        "InstanceTenancy": "default",
+        "EnableDnsSupport": true,
+        "EnableDnsHostnames": false,
+        "Tags": []
+      }
+    }
+}

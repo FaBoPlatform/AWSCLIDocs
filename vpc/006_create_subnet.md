@@ -90,3 +90,27 @@ $ set SUBNET_ID=subnet-########
 * VPCに配置できるSubnetの数の上限は250。
 
 
+# Cloud Formation
+
+既存の VPC 内にサブネットを作成。
+
+[AWS::EC2::Subnet](http://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html)
+
+```json
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Template by FaBo",
+    "Resources": {
+    "FaBoSubnet": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "AvailabilityZone": "ap-northeast-1a",
+        "CidrBlock": "172.16.1.0/24",
+        "VpcId": {
+          "Ref": "FaBoVpc"
+        },
+        "Tags": []
+      }
+    }
+}
+```
